@@ -114,7 +114,7 @@ const BALLS = ['red', 'blue', 'green']
 
 const LIMIT = {red: 12,green: 13,blue: 14}
 
-EXAMPLE.split('\n').forEach((string, stringIndex) => {
+INPUT.split('\n').forEach((string, stringIndex) => {
   MAX_BALLS[stringIndex] = {...DEFAULT_BALLS}
   string.split(': ')[1].split('; ').forEach(turn => {
     turn.split(', ').forEach((comb) => {
@@ -127,10 +127,7 @@ EXAMPLE.split('\n').forEach((string, stringIndex) => {
   })
 })
 const sum = MAX_BALLS.reduce((acc, curr, ballObjIndex) => {
-  const colors = BALLS.filter(ball => {
-    return curr[ball] <= LIMIT[ball]
-  })
-  return acc + (colors.length === 3 ? ballObjIndex + 1 : 0)
+  return acc + (curr.red * curr.blue * curr.green)
 }, 0)
 
 console.log('sum: ', sum);

@@ -1,4 +1,4 @@
-const EXAMPLE = `gtlbhbjgkrb5sixfivefivetwosix
+const INPUT = `gtlbhbjgkrb5sixfivefivetwosix
 ninesixrgxccvrqscbskgzxh6cpvpxsqnb6
 dxxzrlzkksfsffp4
 sbzvmddhnjtwollnjv33d2lbcscstqt
@@ -1000,7 +1000,7 @@ fourfive4tttldbmmkxvhqrmvmrkpxfzbd7
 eightrtsjszc2`
 
 
-const numberArray = EXAMPLE.trim().split('\n').map(string => {
+const numberArray = INPUT.trim().split('\n').map(string => {
   const s = string.split('').filter(s => s.match(/(\d+)/))
   return parseInt(`${s[0]}${s[s.length - 1]}`)
 })
