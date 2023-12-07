@@ -126,6 +126,7 @@ INPUT.split('\n').forEach((string, stringIndex) => {
     })
   })
 })
+
 const sum = MAX_BALLS.reduce((acc, curr, ballObjIndex) => {
   return acc + (curr.red * curr.blue * curr.green)
 }, 0)
