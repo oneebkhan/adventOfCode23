@@ -1009,7 +1009,6 @@ const STRENGTH_ARRAY = [
   'A',
   'K',
   'Q',
-  'J',
   'T',
   '9',
   '8',
@@ -1052,7 +1051,7 @@ const strength = (str1, str2) => {
     )
     return power1 - power2
   }
-  return 1
+  return -1
 }
 
 const five = str => {
