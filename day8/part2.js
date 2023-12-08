@@ -814,4 +814,5 @@ const gcd = (a, b) => (a ? gcd(b % a, a) : b)
 const lcm = (a, b) => (a * b) / gcd(a, b)
 const final = arrayOfZSteps.reduce(lcm)
 
+
 console.log('final: ', final)
