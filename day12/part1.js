@@ -1008,7 +1008,6 @@ const EXAMPLE = `???.### 1,1,3
 
 function memo (func) {
   const cache = new Map()
-
   return function (...args) {
     const cacheKey = args.join('-')
     if (!cache.has(cacheKey)) {
@@ -1016,7 +1015,6 @@ function memo (func) {
       cache.set(cacheKey, value)
       return value
     }
-
     return cache.get(cacheKey)
   }
 }
@@ -1028,7 +1026,7 @@ let totalNumberOfCombinations = 0
  * @param {string} springs
  * @param {number[]} countArray
  */
-const countCombinations = (springs, countArray) => {
+let countCombinations = (springs, countArray) => {
   if (!countArray.length && springs.includes('#')) return 0
   if (!springs && !countArray.length) return 1
   if (!countArray.length) return 1
@@ -1056,14 +1054,14 @@ const countCombinations = (springs, countArray) => {
   return iterationTotal
 }
 
-const memoCountCombinations = memo(countCombinations)
+countCombinations = memo(countCombinations)
 
 const rows = INPUT.split('\n')
 
 rows.forEach(row => {
   const [springs, counts] = row.split(' ')
   const countArray = counts.split(',').map(num => parseInt(num))
-  totalNumberOfCombinations += memoCountCombinations(springs, countArray)
+  totalNumberOfCombinations += countCombinations(springs, countArray)
 })
 
 console.log('totalNumberOfCombinations', totalNumberOfCombinations)
