@@ -150,7 +150,7 @@ const EXAMPLE = `...#......
 .......#..
 #...#.....`
 
-const EXPAND_BY = 1000000
+const EXPAND_BY = 2
 
 const getPairs = (arr) => arr.map( (v, i) => arr.slice(i + 1).map(w => [v, w]) ).flat();
 
